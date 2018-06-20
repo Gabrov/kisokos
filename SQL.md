@@ -1,5 +1,6 @@
 Táblák méretének lekérdezése:
 
+```sql
 SELECT 
     t.NAME AS TableName,
     s.Name AS SchemaName,
@@ -31,9 +32,11 @@ GROUP BY
     t.Name, s.Name, p.Rows
 ORDER BY 
     t.Name
+```
 
 Idegen kulcsok műveleteinek ellenőrzése:
 
+```sql
 SELECT 
    OBJECT_NAME(f.parent_object_id) AS 'Table name',
    COL_NAME(fc.parent_object_id,fc.parent_column_id) AS 'Field name',
@@ -44,3 +47,4 @@ FROM sys.foreign_keys AS f,
 WHERE f.OBJECT_ID = fc.constraint_object_id
 AND t.OBJECT_ID = fc.referenced_object_id
 ORDER BY 1
+```

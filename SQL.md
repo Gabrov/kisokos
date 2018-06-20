@@ -40,11 +40,12 @@ Idegen kulcsok műveleteinek ellenőrzése:
 SELECT 
    OBJECT_NAME(f.parent_object_id) AS 'Table name',
    COL_NAME(fc.parent_object_id,fc.parent_column_id) AS 'Field name',
+   OBJECT_NAME(f.referenced_object_id) AS 'Referenced table',
+   COL_NAME(fc.referenced_object_id, fc.referenced_column_id) AS 'Referenced field name',
+   update_referential_action_desc AS 'On Update',
    delete_referential_action_desc AS 'On Delete'
 FROM sys.foreign_keys AS f,
-     sys.foreign_key_columns AS fc,
-     sys.tables t 
+     sys.foreign_key_columns AS fc
 WHERE f.OBJECT_ID = fc.constraint_object_id
-AND t.OBJECT_ID = fc.referenced_object_id
 ORDER BY 1
 ```

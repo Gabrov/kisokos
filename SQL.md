@@ -39,7 +39,7 @@ Idegen kulcsok műveleteinek ellenőrzése:
 ```sql
 SELECT 
    OBJECT_NAME(f.parent_object_id) AS 'Table name',
-   COL_NAME(fc.parent_object_id,fc.parent_column_id) AS 'Field name',
+   COL_NAME(fc.parent_object_id, fc.parent_column_id) AS 'Field name',
    OBJECT_NAME(f.referenced_object_id) AS 'Referenced table',
    COL_NAME(fc.referenced_object_id, fc.referenced_column_id) AS 'Referenced field name',
    update_referential_action_desc AS 'On Update',

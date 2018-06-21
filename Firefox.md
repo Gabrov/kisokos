@@ -1,0 +1,2 @@
+Fájlok a Firefox profilban:  
+

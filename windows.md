@@ -13,3 +13,8 @@ VSS terület átméretezése, hogy felszabduljon a hely (ha a shadow-ok törlés
 ```
 vssadmin resize shadowstorage /for=D: /on=D: /maxsize=400MB
 ```
+
+WinSxS mappa tisztítása:
+```
+@DISM.exe /online /Cleanup-Image /StartComponentCleanup
+```

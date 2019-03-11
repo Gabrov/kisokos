@@ -18,3 +18,8 @@ WinSxS mappa tisztítása:
 ```
 @DISM.exe /online /Cleanup-Image /StartComponentCleanup
 ```
+
+Termék kulcs megnézése:
+```
+wmic path SoftwareLicensingService get OA3xOriginalProductKey
+```

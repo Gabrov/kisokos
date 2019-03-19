@@ -98,3 +98,18 @@ docker-machine create -d virtualbox \
     --engine-env HTTPS_PROXY=http://username:password@host:port \
     default
 ```
+
+
+### ext4 root tárhely beállítása
+A Linux alapból 5% tárhelyet lefoglal a root felhasználó és a rendszer szolgáltatások
+számára, így tele lemeznél is azok még tudnak csináni valamit.
+
+A foglalás kikapcsolása:
+```bash
+sudo tune2fs -m 0 /dev/sdb1
+```
+
+Ellenőrzés (elvileg, Debian 9 alatt a tune2fs-nek nincs -l kapcsolója, pedig a man is írja):
+```bash
+sudo tune2fs -l /dev/sdb1 | grep ‘Reserved block count’
+```

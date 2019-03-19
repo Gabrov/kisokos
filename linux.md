@@ -109,7 +109,7 @@ A foglalás kikapcsolása:
 sudo tune2fs -m 0 /dev/sdb1
 ```
 
-Ellenőrzés (elvileg, Debian 9 alatt a tune2fs-nek nincs -l kapcsolója, pedig a man is írja):
+Ellenőrzés:
 ```bash
 sudo tune2fs -l /dev/sdb1 | grep ‘Reserved block count’
 ```

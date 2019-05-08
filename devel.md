@@ -30,3 +30,8 @@ dotnet restore
 dotnet add Microsoft.EntityFrameworkCore.SqlServer
 dotnet ef dbcontext scaffold -o Models "Server=<szerver>;Database=<adatbázis>;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer
 ```
+
+Ha a GitHub SSH-n keresztül kidob (csak végszükség esetén!):
+```
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+```

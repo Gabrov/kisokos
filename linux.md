@@ -113,3 +113,17 @@ Ellenőrzés:
 ```bash
 sudo tune2fs -l /dev/sdb1 | grep ‘Reserved block count’
 ```
+
+Helyfoglalás ellenőrzése:
+```
+du | sort -n -r 
+```
+Ez csak számokat ír, a -h (human) kapcsoló eredményét rosszul rendezi.
+
+```
+du -hs * | sort -h
+```
+```
+brew install coreutils
+du -hs * | gsort -h
+```

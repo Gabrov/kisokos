@@ -14,6 +14,33 @@ cd bar
 git submodule update --init --recursive
 ```
 
+Git branch letöltése:
+```
+$ git branch -r
+origin/HEAD -> origin/master
+origin/daves_branch
+origin/discover
+origin/master
+
+$ git fetch origin discover
+$ git checkout discover
+
+git checkout --track origin/daves_branch
+```
+
+Git branch frissítése master-ből (az elsőnél egy plusz commit lesz):
+```
+git checkout b1
+git merge origin/master
+git push origin b1
+```
+
+```
+git checkout b1
+git fetch
+git rebase origin/master
+```
+
 EF Core kódgenerálás létező adatbázisból:
 A projekt .csproj fájljába be kell írni ezt:
 ```

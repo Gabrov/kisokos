@@ -72,3 +72,13 @@ SET RECOVERY FULL;
 -- Take full backup to establish log chain
 -- take log backups to help truncate the log file and keep it manageable
 ```
+
+Tábla létezésének lekérdezései:  
+```sql
+SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'TheSchema'  AND  TABLE_NAME = 'TheTable'
+```
+  
+```sql
+SELECT OBJECT_ID (N'mytablename', N'U')
+```
+

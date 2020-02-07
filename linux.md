@@ -127,3 +127,13 @@ du -hs * | sort -h
 brew install coreutils
 du -hs * | gsort -h
 ```
+
+$ du -hs /var/log/journal/
+4.1G    /var/log/journal/
+
+$ ls -lath /var/log/journal/*/ | tail -n 2
+-rw-r-x---+ 1 root systemd-journal 8.0M Dec 24 05:15 user-xxx.journal
+
+$ journalctl --vacuum-time=10d
+
+$ journalctl --vacuum-size=2G

@@ -47,3 +47,10 @@ myisamchk -r -v -f $TABLE_NAME
 
 sudo service mysql start
 ```
+
+Lekérdezés naplózás bekapcsolása:
+```
+SET global general_log_file='/tmp/mysql.log';
+SET global general_log = on;
+SET global log_output = 'file';
+```

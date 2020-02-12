@@ -58,6 +58,15 @@ dotnet add Microsoft.EntityFrameworkCore.SqlServer
 dotnet ef dbcontext scaffold -o Models "Server=<szerver>;Database=<adatbázis>;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer
 ```
 
+```
+dotnet ef dbcontext scaffold "Server=localhost;Database=ef;User=root;Password=123456;TreatTinyAsBoolean=true;" "Pomelo.EntityFrameworkCore.MySql"
+```
+
+```
+dotnet tool list -g
+dotnet tool update dotnet-ef -g
+```
+
 Ha a GitHub SSH-n keresztül kidob (csak végszükség esetén!):
 ```
 ssh-keyscan github.com >> ~/.ssh/known_hosts

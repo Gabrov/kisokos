@@ -23,3 +23,9 @@ Termék kulcs megnézése:
 ```
 wmic path SoftwareLicensingService get OA3xOriginalProductKey
 ```
+
+Windows Update engedélyezése:
+```
+HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate
+If value for DisableWindowsUpdateAccess is 1, modify it to 0.
+```

@@ -29,3 +29,10 @@ Windows Update engedélyezése:
 HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate
 If value for DisableWindowsUpdateAccess is 1, modify it to 0.
 ```
+
+Remote Desktop hozzáférés jelszó nélkül:
+```
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa]
+"LimitBlankPasswordUse"=dword:00000000
+```
+0 érték engedi, 1 tiltja.

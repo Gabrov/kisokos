@@ -14,3 +14,4 @@ Hard link-kel (junction) át lehet tenni máshova:
 ```
 mklink /J oldpath newpath
 ```
+(Utility: https://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html)

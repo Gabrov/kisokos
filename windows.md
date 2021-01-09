@@ -36,7 +36,7 @@ If value for DisableWindowsUpdateAccess is 1, modify it to 0.
 Másodpercek mutatásának bekapcsolása:
 ```
 HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
-```  
+```
 Új kulcs: ShowSecondsInSystemClock DWORD (32 bit), az érték 1.  
 
 Remote Desktop hozzáférés jelszó nélkül:
@@ -45,3 +45,11 @@ Remote Desktop hozzáférés jelszó nélkül:
 "LimitBlankPasswordUse"=dword:00000000
 ```
 0 érték engedi, 1 tiltja.
+
+Nem elérhető hálózati meghajtók csatolásának törlése (ha intézőből/parancssorból nem megy):
+
+```
+HKEY_CURRENT_USER\Network
+```
+
+Itt kell a megfelelő kulcso(ka)t törölni.

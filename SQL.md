@@ -1,4 +1,4 @@
-Táblák méretének lekérdezése:
+MSSQL táblák méretének lekérdezése:
 
 ```sql
 SELECT 
@@ -32,6 +32,19 @@ GROUP BY
     t.Name, s.Name, p.Rows
 ORDER BY 
     t.Name
+```
+
+MySQL táblák méretének lekérdezése:
+```sql
+SELECT CONCAT(table_schema, '.', table_name),
+       CONCAT(ROUND(table_rows / 1000000, 2), 'M')                                    rows,
+       CONCAT(ROUND(data_length / ( 1024 * 1024 * 1024 ), 2), 'G')                    DATA,
+       CONCAT(ROUND(index_length / ( 1024 * 1024 * 1024 ), 2), 'G')                   idx,
+       CONCAT(ROUND(( data_length + index_length ) / ( 1024 * 1024 * 1024 ), 2), 'G') total_size,
+       ROUND(index_length / data_length, 2)                                           idxfrac
+FROM   information_schema.TABLES
+ORDER  BY data_length + index_length DESC
+LIMIT  10;
 ```
 
 Idegen kulcsok műveleteinek ellenőrzése:
@@ -81,4 +94,3 @@ SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'TheSchema'  AND  T
 ```sql
 SELECT OBJECT_ID (N'mytablename', N'U')
 ```
-

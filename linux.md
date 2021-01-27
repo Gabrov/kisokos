@@ -99,8 +99,7 @@ docker-machine create -d virtualbox \
     default
 ```
 
-
-### ext4 root tárhely beállítása
+## ext4 root tárhely beállítása
 A Linux alapból 5% tárhelyet lefoglal a root felhasználó és a rendszer szolgáltatások
 számára, így tele lemeznél is azok még tudnak csináni valamit.
 
@@ -140,3 +139,12 @@ $ journalctl --vacuum-size=2G
 
 APT kulcs hozzáadása Ubuntu kulcsszerverről:
 gpg --keyserver keyserver.ubuntu.com --recv-keys 9F3DF15B48406D14
+
+## Port foglaltságának lekérdezése
+
+```
+sudo lsof -i -P -n | grep LISTEN
+sudo netstat -tulpn | grep LISTEN
+sudo lsof -i:22 ## egy konkrét port, pl. a 22-es ##
+sudo nmap -sTU -O IP-cim
+```

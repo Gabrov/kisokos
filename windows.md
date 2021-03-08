@@ -53,3 +53,13 @@ HKEY_CURRENT_USER\Network
 ```
 
 Itt kell a megfelelő kulcso(ka)t törölni.
+
+Foglalt/fentartott portok listája:
+```
+netsh int ipv4 show excludedportrange protocol=tcp
+```
+
+Portok felszabadítása (nem engedi a Win):
+```
+netsh int ipv4 delete excludedportrange protocol=tcp startport=1540 numberofports=100
+```

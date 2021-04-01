@@ -148,3 +148,22 @@ sudo netstat -tulpn | grep LISTEN
 sudo lsof -i:22 ## egy konkrét port, pl. a 22-es ##
 sudo nmap -sTU -O IP-cim
 ```
+
+## Kulcs generálása SSH kapcsolathoz
+Rákérdezéssel:
+```
+ssh-keygen -t rsa -b 4096
+ssh-keygen -t dsa
+ssh-keygen -t ecdsa -b 521
+ssh-keygen -t ed25519
+```
+
+Fájlnév megadással:
+```
+ssh-keygen -f ~/tatu-key-ecdsa -t ecdsa -b 521
+```
+
+Publikus kulcs importálása:
+```
+ssh-copy-id -i ~/.ssh/tatu-key-ecdsa user@host
+```

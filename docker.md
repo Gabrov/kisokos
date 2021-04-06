@@ -10,3 +10,10 @@ Docker konténer IP-jének lekérdezése:
 ```
 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
 ```
+
+Hasznos aliasok:
+```
+alias docker-upgrade="docker images|cut -f1 -d' '|sort -u|grep -v elbandi|xargs --no-run-if-empty -n1 docker pull"
+alias docker-remove="docker images -q --filter 'dangling=true'|xargs --no-run-if-empty docker rmi"
+alias docker-clean="docker ps -a | egrep \"Exited|Dead\" | awk '{print \$1}'|xargs --no-run-if-empty docker rm"
+```

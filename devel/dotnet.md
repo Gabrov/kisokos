@@ -8,3 +8,9 @@ Windows szolgáltatás (https://dotnetcoretutorials.com/2019/12/07/creating-wind
 dotnet publish -r win-x64 -c Release
 sc create TestService BinPath=C:\full\path\to\publish\dir\WindowsServiceExample.exe
 ```
+
+Telepített betűtípusok listázása (pl. Linqpad-ból):
+```
+foreach (System.Drawing.FontFamily font in System.Drawing.FontFamily.Families)
+	Console.WriteLine(font.Name);
+```

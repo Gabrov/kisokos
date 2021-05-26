@@ -63,3 +63,15 @@ Portok felszabadítása (nem engedi a Win):
 ```
 netsh int ipv4 delete excludedportrange protocol=tcp startport=1540 numberofports=100
 ```
+
+Windows Search adatbázis töredezettség mentesítése (shrinkelése):
+```
+Sc config wsearch start=disabled
+Net stop wsearch
+
+EsentUtl.exe /d %AllUsersProfile%\Microsoft\Search\Data\Applications\Windows\Windows.edb
+
+Sc config wsearch start=delayed-auto
+
+Net start wsearch
+```

@@ -75,3 +75,11 @@ Sc config wsearch start=delayed-auto
 
 Net start wsearch
 ```
+
+PowerShell scriptek futtatásának engedélyezése (pl. NodeJS globális parancsokhoz):
+```
+Get-ExecutionPolicy -List
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Házirendek: AllSigned, Bypass, Default (Restricted a Windows ügyfelekhez, RemoteSigned a Windows kiszolgálókhoz), RemoteSigned, Restricted, Undefined, Unrestricted

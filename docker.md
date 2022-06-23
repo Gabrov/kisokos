@@ -17,3 +17,13 @@ alias docker-upgrade="docker images|cut -f1 -d' '|sort -u|grep -v elbandi|xargs 
 alias docker-remove="docker images -q --filter 'dangling=true'|xargs --no-run-if-empty docker rmi"
 alias docker-clean="docker ps -a | egrep \"Exited|Dead\" | awk '{print \$1}'|xargs --no-run-if-empty docker rm"
 ```
+
+Ha a konténer indításakor ez az üzenet jön:
+```
+bind: A szoftvercsatornához a hozzáférési engedélyeket megsértő módon történt hozzáférés.
+```
+A *Host Network Service* újraindítása segíthet.
+```
+net stop hns
+net start hns
+```

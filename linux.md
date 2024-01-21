@@ -127,6 +127,7 @@ brew install coreutils
 du -hs * | gsort -h
 ```
 
+```
 $ du -hs /var/log/journal/
 4.1G    /var/log/journal/
 
@@ -136,9 +137,14 @@ $ ls -lath /var/log/journal/*/ | tail -n 2
 $ journalctl --vacuum-time=10d
 
 $ journalctl --vacuum-size=2G
+```
+
 
 APT kulcs hozzáadása Ubuntu kulcsszerverről:
+```
 gpg --keyserver keyserver.ubuntu.com --recv-keys 9F3DF15B48406D14
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
+```
 
 ## Port foglaltságának lekérdezése
 

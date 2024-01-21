@@ -83,3 +83,10 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 Házirendek: AllSigned, Bypass, Default (Restricted a Windows ügyfelekhez, RemoteSigned a Windows kiszolgálókhoz), RemoteSigned, Restricted, Undefined, Unrestricted
+
+Külső meghajtó mountolása WSL2 alá (rendszergaza jog kell hozzá):
+```
+wmic diskdrive list brief
+wsl --mount \\.\PHYSICALDRIVE10 --partition 0
+wsl --unmount \\.\PHYSICALDRIVE10
+```

@@ -147,3 +147,9 @@ wmic diskdrive list brief
 wsl --mount \\.\PHYSICALDRIVE10 --partition 0
 wsl --unmount \\.\PHYSICALDRIVE10
 ```
+
+FortiClient (vagy bármely más program törlése, ha a programok eltávolítása menüből nem hagyja magát):
+
+```
+wmic product where "name like 'Forti%%'" call uninstall /nointeractive
+```

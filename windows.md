@@ -153,3 +153,9 @@ FortiClient (vagy bármely más program törlése, ha a programok eltávolítás
 ```
 wmic product where "name like 'Forti%%'" call uninstall /nointeractive
 ```
+
+Windows Terminal indítása osztott panelekkel:
+
+```
+wt split-pane -V; move-focus left; split-pane -H; move-focus right; split-pane -H
+```

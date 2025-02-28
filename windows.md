@@ -14,17 +14,18 @@ vssadmin resize shadowstorage /for=D: /on=D: /maxsize=400MB
 
 ## WinSxS
 
+Ellenőrzés:
+
+```
+dism /Online /Cleanup-Image /AnalyzeComponentStore
+Dism /Online /Cleanup-Image /ScanHealth
+```
+
 WinSxS mappa tisztítása:
 
 ```
 DISM.exe /online /Cleanup-Image /StartComponentCleanup
 sfc /scannow
-```
-
-Így nem módosít semmit, csak ellenőriz:
-
-```
-Dism /Online /Cleanup-Image /ScanHealth
 ```
 
 ## Windows Update

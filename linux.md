@@ -146,6 +146,19 @@ gpg --keyserver keyserver.ubuntu.com --recv-keys 9F3DF15B48406D14
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
 ```
 
+## Root partíció kiterjesztése
+
+```
+echo 1 > /sys/class/block/sda/device/rescan
+fdisk -l
+parted
+- print
+- resizepart 2
+- print
+- quit
+resize2fs /dev/sda2
+```
+
 ## Port foglaltságának lekérdezése
 
 ```

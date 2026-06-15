@@ -186,3 +186,8 @@ Publikus kulcs importálása:
 ```
 ssh-copy-id -i ~/.ssh/tatu-key-ecdsa user@host
 ```
+
+X11 auth sudo root-nak:
+```
+sudo xauth add $(xauth list | grep "unix$(echo $DISPLAY | cut -c10-12)")
+```

@@ -171,3 +171,9 @@ Windows Terminal indítása osztott panelekkel:
 ```
 wt split-pane -V; move-focus left; split-pane -H; move-focus right; split-pane -H
 ```
+
+Felhasználói mappák lekérdezése:
+
+```
+reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders"
+```
